@@ -27,7 +27,7 @@ const keys = {
   ArrowRight: {
     pressed: false,
   },
-  arrowUp: {
+  ArrowUp: {
     pressed: false,
   },
 };
@@ -37,7 +37,9 @@ const backGround = new Sprite({
     x: 0,
     y: 0,
   },
-  imgSrc: "./imgs/bg.png",
+  // !my changes
+  imgSrc: "./imgs/bg.jpg",
+  scale: 0.2,
 });
 
 const bird = new Sprite({
@@ -409,7 +411,7 @@ window.addEventListener("keydown", (e) => {
 
       case "ArrowUp":
         if (enmy.velocity.y === 0) {
-          keys.arrowUp.pressed = true;
+          keys.ArrowUp.pressed = true;
           enmy.velocity.y = -20;
         }
         break;
