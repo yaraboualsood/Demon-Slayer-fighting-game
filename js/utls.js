@@ -11,21 +11,22 @@ function rectangularCollision({ rectangular1, rectangular2 }) {
   );
 }
 
+// !my changes
 function determinWinner({ player, enmy, timerId }) {
   document.querySelector("#resultOfGame").style.display = "flex";
   clearTimeout(timerId);
   if (player.health === enmy.health) {
-    document.querySelector("#resultOfGame").innerHTML = "Tie";
+    winner = "Tie";
   } else if (player.health > enmy.health) {
     // enmy.switchSprite("death");
-    document.querySelector("#resultOfGame").innerHTML = "Player 1 Wins";
+    winner = "Player 1 Wins!";
   } else if (player.health < enmy.health) {
-    document.querySelector("#resultOfGame").innerHTML = "Player 2 Wins";
+    winner = "Player 2 Wins!";
   }
 
-  // !my changes
   document.querySelector("#resultOfGame").innerHTML = `
-  <span style="font-size: 0.6em">Restarting in 3 seconds...</span>
+   <div>${winner}</div> 
+  <div style="font-size: 20px">Restarting in 3 seconds...</div>
 `;
 
 
