@@ -29,7 +29,6 @@ function determinWinner({ player, enmy, timerId }) {
   <div style="font-size: 20px">Restarting in 3 seconds...</div>
 `;
 
-
   setTimeout(() => {
     location.reload();
   }, 3000);
