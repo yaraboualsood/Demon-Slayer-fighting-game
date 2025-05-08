@@ -1,13 +1,13 @@
 function rectangularCollision({ rectangular1, rectangular2 }) {
   return (
     rectangular1.attackBox.possition.x + rectangular1.attackBox.width >=
-      rectangular2.possition.x &&
+    rectangular2.possition.x &&
     rectangular1.attackBox.possition.x <=
-      rectangular2.possition.x + rectangular2.width &&
+    rectangular2.possition.x + rectangular2.width &&
     rectangular1.attackBox.possition.y + rectangular1.attackBox.height >=
-      rectangular2.attackBox.possition.y &&
+    rectangular2.attackBox.possition.y &&
     rectangular1.attackBox.possition.y <=
-      rectangular2.possition.y + rectangular2.height
+    rectangular2.possition.y + rectangular2.height
   );
 }
 
@@ -22,7 +22,18 @@ function determinWinner({ player, enmy, timerId }) {
   } else if (player.health < enmy.health) {
     document.querySelector("#resultOfGame").innerHTML = "Player 2 Wins";
   }
+
+  // !my changes
+  document.querySelector("#resultOfGame").innerHTML = `
+  <span style="font-size: 0.6em">Restarting in 3 seconds...</span>
+`;
+
+
+  setTimeout(() => {
+    location.reload();
+  }, 3000);
 }
+
 let timer = 51;
 let timerId;
 function decreaseTimer() {

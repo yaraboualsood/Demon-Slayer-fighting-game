@@ -27,7 +27,7 @@ const keys = {
   ArrowRight: {
     pressed: false,
   },
-  ArrowUp: {
+  rrowUp: {
     pressed: false,
   },
 };
@@ -244,6 +244,9 @@ decreaseTimer();
 
 function animate() {
   window.requestAnimationFrame(animate);
+
+
+
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   backGround.update();
@@ -411,7 +414,7 @@ window.addEventListener("keydown", (e) => {
 
       case "ArrowUp":
         if (enmy.velocity.y === 0) {
-          keys.ArrowUp.pressed = true;
+          keys.arrowUp.pressed = true;
           enmy.velocity.y = -20;
         }
         break;
